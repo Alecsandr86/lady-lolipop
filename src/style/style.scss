@@ -1,0 +1,187 @@
+@import "partials/path";
+
+/////////////////////////////////////
+
+
+.box-line{
+  border-top: 1px solid #dddddd;
+  //border-bottom: 1px solid #dddddd;
+  padding:20px 0;
+}
+
+
+.we-recommend{
+
+}
+
+.h2{
+  text-align: center;
+  color: #4c4c4c;
+}
+
+.recom-list{
+  text-align: center;
+  padding: 29px 0 15px;
+  &__item{
+    display: inline-block;
+  }
+  &__text{
+    display: block;
+    font-size:rem(13);
+  }
+  &__sum{
+    display: block;
+    font-size:rem(18);
+    font-weight: bold;
+    color: #fb511e;
+    padding: 8px 0 0;
+
+  }
+}
+
+
+.manufacturers{
+
+}
+
+.manufa-list{
+  text-align: center;
+  padding: 58px 0 0;
+  &__item{
+    display: inline-block;
+    text-align: center;
+    width:195px;
+  }
+  &__img{
+
+  }
+}
+
+
+.manufa-baners{
+  padding: 49px 0 21px;
+  &__item{
+    display: inline-block;
+    vertical-align: top;
+    width:200px;
+
+    &-big{
+      width:380px;
+    }
+  }
+  &__link{
+    display: inline-block;
+    overflow: hidden;
+    height:371px;
+    img{
+      height:371px;
+    }
+    &-min{
+      height:183px;
+      img{
+        height:183px;
+      }
+    }
+    &:hover{
+      .manufa-baners__img{
+        transform: scale(1.1,1.1);
+        transition: all, 0.5s, ease;
+      }
+    }
+  }
+  &__img{
+    transition: all, 0.5s, ease;
+    width:100%;
+  }
+}
+
+
+
+.news{
+
+}
+
+.news-list{
+  text-align: center;
+  padding: 22px 0 16px;
+  &__item{
+    display: inline-block;
+    text-align: left;
+    padding:0 13px 0 0;
+    &:last-child{
+      padding:0;
+    }
+  }
+  &__img{
+
+  }
+  &__date{
+    display: block;
+    font-size:rem(12);
+    color: #7e7e7e;
+    padding: 5px 0 0;
+  }
+  &__text{
+    display: block;
+    color: #4c4c4c;
+    font-size:rem(13);
+  }
+}
+
+.box-text{
+  padding: 25px 0;
+  .h2{
+    padding:0 0 20px;
+  }
+  h3{
+    padding:20px 0;
+  }
+  p{
+    padding:15px 0;
+  }
+
+}
+
+.list-initial{
+  list-style: initial;
+  padding:0 0 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//************ ПЛАВНАЯ АНИМАЦИЯ ***********//
+//transition:all 0.3s ease;
+/////////////////////////////////////////
+
+
+@import "partials/media";

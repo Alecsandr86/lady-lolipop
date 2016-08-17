@@ -1,0 +1,60 @@
+.footer{
+  background-color: #f3f3f3;
+  padding:0 0 18px;
+
+}
+
+.footer-logo{
+  width: 420px;
+  padding: 10px 0 0;
+  .logo__text{
+    margin:0;
+  }
+}
+.forum-col{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width:37px;
+  height:37px;
+  border-radius: 50%;
+  background-color: #e2e2e2;
+  i{
+    vertical-align: middle;
+  }
+}
+.forum-icon{
+  margin: 8px 0 0;
+}
+.blog-icon{
+  margin:9px 0 0;
+}
+
+.link-forum{
+  padding: 6px 0 23px;
+  &__link{
+    color: #6d6d6d;
+    font-size:rem(14);
+    text-decoration: none;
+    display: inline-block;
+    padding:0 10px;
+  }
+}
+
+
+.social-netw{
+
+  &__item{
+    display: inline-block;
+    vertical-align: middle;
+    &-name{
+      padding:0 15px 0 0;
+    }
+  }
+  a{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px 0 0;
+  }
+
+}
