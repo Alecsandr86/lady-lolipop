@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,8 @@
 <header>
     <div class="menu-top">
         <div class="container both">
-            <ul class="top-menu left">
+            <a class="top-menu-mob left js-menu" href="javascript: void(0);"></a>
+            <ul class="top-menu left js-menu__up">
                 <li class="top-menu__item">
                   <a class="top-menu__link" href="javascript: void(0);">Как сделать заказ</a>
                 </li>
@@ -62,7 +63,7 @@
                 </div>
 
                 <a class="your-cart right" href="javascript: void(0);">
-                    <i class="your-cart-icon"></i>
+                    <i class="your-cart-icon hidden-xs"></i>
                     Ваша Корзина <span>(5)</span>
                 </a>
             </div>
@@ -84,7 +85,7 @@
             </div>
 
             <ul class="phones right">
-                <li class="phones__item">
+                <li class="phones__item hidden-md">
                     <a class="phones__link phones__mas" href="javascript: void(0);">Письмо директору</a>
                 </li>
                 <li class="phones__item">
@@ -102,6 +103,7 @@
 
     <div class="menu-wrapper">
         <div class="container both">
+            <a class="menu_mobail left" href="javascript: void(0);"></a>
             <ul class="menu left">
                 <li class="menu__item">
                     <a class="menu__link" href="javascript: void(0);">Женская одежда</a>
@@ -219,10 +221,10 @@
                 </li>
             </ul>
             <form class="form-site-search right">
-                <label class="site-search">
+                <div class="site-search">
                     <input class="site-search__input" type="search" placeholder="Поиск по сайту">
                     <button class="site-search__btn"><i class="search-icon"></i></button>
-                </label>
+                </div>
             </form>
         </div>
     </div>

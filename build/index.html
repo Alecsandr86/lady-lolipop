@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,8 @@
 <header>
     <div class="menu-top">
         <div class="container both">
-            <ul class="top-menu left">
+            <a class="top-menu-mob left js-menu" href="javascript: void(0);"></a>
+            <ul class="top-menu left js-menu__up">
                 <li class="top-menu__item">
                   <a class="top-menu__link" href="javascript: void(0);">Как сделать заказ</a>
                 </li>
@@ -62,7 +63,7 @@
                 </div>
 
                 <a class="your-cart right" href="javascript: void(0);">
-                    <i class="your-cart-icon"></i>
+                    <i class="your-cart-icon hidden-xs"></i>
                     Ваша Корзина <span>(5)</span>
                 </a>
             </div>
@@ -84,7 +85,7 @@
             </div>
 
             <ul class="phones right">
-                <li class="phones__item">
+                <li class="phones__item hidden-md">
                     <a class="phones__link phones__mas" href="javascript: void(0);">Письмо директору</a>
                 </li>
                 <li class="phones__item">
@@ -102,6 +103,7 @@
 
     <div class="menu-wrapper">
         <div class="container both">
+            <a class="menu_mobail left" href="javascript: void(0);"></a>
             <ul class="menu left">
                 <li class="menu__item">
                     <a class="menu__link" href="javascript: void(0);">Женская одежда</a>
@@ -219,10 +221,10 @@
                 </li>
             </ul>
             <form class="form-site-search right">
-                <label class="site-search">
+                <div class="site-search">
                     <input class="site-search__input" type="search" placeholder="Поиск по сайту">
                     <button class="site-search__btn"><i class="search-icon"></i></button>
-                </label>
+                </div>
             </form>
         </div>
     </div>
@@ -330,7 +332,7 @@
               <span class="recom-list__sum">2 500 руб.</span>
             </li>
 
-            <li class="recom-list__item">
+            <li class="recom-list__item hidden-md hidden-sm-ib">
               <a href="javascript: void(0);">
                 <img class="recom-list__img" src="images/recom-list-5.jpg" alt="img">
               </a>
@@ -341,7 +343,7 @@
               <span class="recom-list__sum">2 500 руб.</span>
             </li>
 
-            <li class="recom-list__item">
+            <li class="recom-list__item hidden-lg hidden-sm-ib">
               <a href="javascript: void(0);">
                 <img class="recom-list__img" src="images/recom-list-1.jpg" alt="img">
               </a>
@@ -352,7 +354,7 @@
               <span class="recom-list__sum">2 500 руб.</span>
             </li>
 
-	          <li class="recom-list__item">
+	          <li class="recom-list__item hidden-lg">
 		          <a href="javascript: void(0);">
 			          <img class="recom-list__img" src="images/recom-list-1.jpg" alt="img">
 		          </a>
@@ -434,17 +436,16 @@
               <a href="javascript: void(0);">
                 <img src="images/manufa-12.jpg" alt="img" class="manufa-list__img">
               </a>
-
             </li>
           </ul>
           <ul class="manufa-baners">
-            <li class="manufa-baners__item">
+            <li class="manufa-baners__item hidden-xs">
               <a class="manufa-baners__link" href="javascript: void(0);">
                 <img src="images/manufa-baners-1.jpg" alt="img" class="manufa-baners__img">
               </a>
             </li>
             <li class="manufa-baners__item manufa-baners__item-big">
-              <a class="manufa-baners__link manufa-baners__link-min" href="javascript: void(0);">
+              <a class="manufa-baners__link manufa-baners__link-min manufa-baners__link-mob" href="javascript: void(0);">
                 <img src="images/manufa-baners-2.jpg" alt="img" class="manufa-baners__img">
               </a>
               <a class="manufa-baners__link manufa-baners__link-min" href="javascript: void(0);">
@@ -459,7 +460,7 @@
                 <img src="images/manufa-baners-5.jpg" alt="img" class="manufa-baners__img">
               </a>
             </li>
-            <li class="manufa-baners__item">
+            <li class="manufa-baners__item hidden-md hidden-sm-ib hidden-xs">
               <a class="manufa-baners__link manufa-baners__link-min" href="javascript: void(0);">
                 <img src="images/manufa-baners-6.jpg" alt="img" class="manufa-baners__img">
               </a>
@@ -467,7 +468,7 @@
                 <img src="images/manufa-baners-7.jpg" alt="img" class="manufa-baners__img">
               </a>
             </li>
-	          <li class="manufa-baners__item">
+	          <li class="manufa-baners__item hidden-lg hidden-sm-ib">
 		          <a class="manufa-baners__link" href="javascript: void(0);">
 			          <img src="images/manufa-baners-1.jpg" alt="img" class="manufa-baners__img">
 		          </a>
@@ -512,7 +513,7 @@
                 одежды: снимаем мерки
               </span>
             </li>
-            <li class="news-list__item">
+            <li class="news-list__item hidden-md hidden-sm-ib">
               <a href="javascript: void(0);">
                 <img src="images/news-4.jpg" alt="img" class="news-list__img">
               </a>
@@ -522,7 +523,7 @@
                 одежды: снимаем мерки
               </span>
             </li>
-            <li class="news-list__item">
+            <li class="news-list__item hidden-lg">
               <a href="javascript: void(0);">
                 <img src="images/news-4.jpg" alt="img" class="news-list__img">
               </a>
@@ -593,6 +594,7 @@
             <i class="forum-icon"></i>
           </span>
           <a href="javascript: void(0);" class="link-forum__link">Женский форум</a>
+          <br class="br-xs">
           <span class="forum-col">
             <i class="blog-icon"></i>
           </span>
@@ -616,8 +618,88 @@
           </li>
         </ul>
       </div>
+      <div class="footer-nav left">
+
+        <div class="footer-menu">
+          <p class="footer-title">О компании</p>
+          <ul class="footer-list">
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Вакансии</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Благотворительность</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Сертификаты</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Сотрудники</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Карта сайта</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-menu">
+          <p class="footer-title">Сервис и поддержка</p>
+          <ul class="footer-list">
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Как сделать заказ</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Скидки</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Доставка и оплата</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Возврат</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-menu">
+          <p class="footer-title">Каталог товаров</p>
+          <ul class="footer-list">
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Женская одежда</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Бижутерия</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Кожгалантерея</a>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link">Платки и шарфы</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-menu">
+          <ul class="footer-list footer-list_tar">
+            <li class="footer-list__item">
+              <span class="footer-list__phones">8 (800) 500-41-20</span>
+              <span class="footer-list__pho-title">Звонок бесплатный</span>
+            </li>
+            <li class="footer-list__item">
+              <span class="footer-list__phones">8 (495) 642-38-53</span>
+              <span class="footer-list__pho-title">пн-пт с 10:00 до 19:00</span>
+            </li>
+            <li class="footer-list__item">
+              <a href="javascript: void(0);" class="footer-list__link footer-list__link_oran">Письмо директору</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </footer>
+
   <script src="js/jquery.min.js"></script>
   <script src="js/script.js"></script>
 

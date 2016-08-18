@@ -13,11 +13,19 @@ $(document).ready(function(){
 
     };
 
-    console.log('jQuery работает');
-
 
     $(".js-btn-cabinet").on('click', function(){
         $(this).find(".js-list-up").slideToggle();
+    });
+
+    $(".js-menu").bind('click', function () {
+        $(this).toggleClass('top-menu-mob-hover').toggleClass("top-menu-mob").next(".js-menu__up").slideToggle();
+    });
+
+    $(".menu_mobail").bind('click', function () {
+        $(this).toggleClass('menu_mobail').toggleClass('menu_mobail-active').next('.menu').slideToggle();
     })
+
+
 
 });

@@ -5,7 +5,7 @@
 }
 
 .footer-logo{
-  width: 420px;
+  width: 30%;
   padding: 10px 0 0;
   .logo__text{
     margin:0;
@@ -15,20 +15,11 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  width:37px;
-  height:37px;
-  border-radius: 50%;
-  background-color: #e2e2e2;
   i{
     vertical-align: middle;
   }
 }
-.forum-icon{
-  margin: 8px 0 0;
-}
-.blog-icon{
-  margin:9px 0 0;
-}
+
 
 .link-forum{
   padding: 6px 0 23px;
@@ -58,3 +49,91 @@
   }
 
 }
+
+.footer-nav{
+  width:70%;
+  padding: 24px 0 0 6%;
+}
+
+.footer-menu{
+  float: left;
+  width: 25%;
+}
+
+.footer-title{
+  font-size:rem(11);
+  text-transform: uppercase;
+  color: #535353;
+  font-weight: bold;
+}
+
+.footer-list{
+  &_tar{
+    text-align: right;
+  }
+  &__item{
+
+  }
+  &__link{
+    font-size:rem(13);
+    color: #6d6d6d;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 0;
+    &_oran{
+      font-size:rem(12);
+      color: #fb4711;
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &__phones{
+    display: block;
+    font-size:rem(18);
+    color: #4c4c4c;
+  }
+  &__pho-title{
+    display: block;
+    font-size:rem(12);
+    color: #6d6d6d;
+    padding: 0 0 13px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
