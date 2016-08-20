@@ -5,13 +5,20 @@
 
 //hover спрайта
 
+//sort-btn-1
+.sort-btn-1 {
+  @include sprite($sort-btn-1);
+  &.active {
+    @include sprite($sort-btn-1-hover);
+  }
+}
+.sort-btn-2 {
+  @include sprite($sort-btn-2);
+  &.active {
+    @include sprite($sort-btn-2-hover);
+  }
+}
 
-//.top-menu-mob {
-//  @include sprite($top-menu-mob);
-//  &:hover {
-//    @include sprite($top-menu-mob-hover);
-//  }
-//}
 //.nav-mobail{
 //  @include sprite($nav-mobail);
 //  &:hover {

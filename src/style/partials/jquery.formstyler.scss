@@ -1,0 +1,87 @@
+.jq-checkbox {
+  width: 14px;
+  height: 14px;
+  margin: 0 1px 0 0;
+  background-color: #fff;
+  background: linear-gradient(#fff, #fff);
+}
+
+.jq-checkbox.checked .jq-checkbox__div {
+  width: 8px;
+  height: 8px;
+  margin: 2px 0 0 2px;
+  border-radius: 2px;
+  background: #666;
+  box-shadow: none;
+}
+.jq-selectbox{
+  
+}
+.jq-selectbox__select {
+  height: 28px;
+  padding: 0 45px 0 10px;
+  border: 1px solid #cbcbcb;
+  border-bottom-color: #cbcbcb;
+  border-radius: 0;
+  background: #fff;
+  background: -webkit-linear-gradient(#FFF, #fff);
+  background: linear-gradient(#FFF, #fff);
+  box-shadow: none;
+  font: none;
+  font-family:'Open Sans', sans-serif;
+  font-size:rem(13);
+  line-height: 25px;
+  color: #333;
+  text-shadow: none;
+  &:hover {
+    background: #fff;
+    background: -webkit-linear-gradient(#fff, #fff);
+    background: linear-gradient(#fff, #fff);
+  }
+}
+
+.jq-selectbox__trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 100%;
+  border-left: none;
+}
+
+.jq-selectbox__trigger-arrow {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #76ac18;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+.jq-selectbox:hover .jq-selectbox__trigger-arrow {
+  border-top-color: #76ac18;
+}
+
+.jq-selectbox__dropdown {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 0;
+  border: 1px solid #cbcbcb;
+  border-radius: 0;
+  background: #FFF;
+  box-shadow: none;
+  font: 14px/18px Arial, sans-serif;
+}
+.jq-selectbox li{
+  -webkit-transition: backround,0.3s, ease;
+  -moz-transition: backround,0.3s, ease ;
+  -ms-transition: backround,0.3s, ease ;
+  -o-transition: backround,0.3s, ease ;
+  transition: backround,0.3s, ease ;
+  &:hover {
+    background-color: #76ac18;
+    color: #FFF;
+  }
+}

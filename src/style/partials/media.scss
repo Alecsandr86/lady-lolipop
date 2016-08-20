@@ -425,7 +425,17 @@
     padding:5px 0;
   }
 
-
-
+  .cart-down {
+    width: 320px;
+  }
+  .cart-list{
+    &__item{
+      padding: 11px 5px 0;
+    }
+    &__text {
+      width: 140px;
+      padding: 0 0 0 5px;
+    }
+  }
 
 }

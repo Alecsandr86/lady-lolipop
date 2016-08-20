@@ -64,7 +64,13 @@ gulp.task('bower', function(){
   // jquery
   gulp.src('./bower_components/jquery/jquery.min.js')
       .pipe(gulp.dest(path.build.bower_js));
-      //
+    // form-styler
+    gulp.src('./bower_components/jquery-form-styler/*.css')
+        .pipe(gulp.dest('src/js/jquery-form-styler/'))
+        .pipe(gulp.dest('build/js/jquery-form-styler/'));
+    gulp.src('./bower_components/jquery-form-styler/*.js')
+        .pipe(gulp.dest('src/js/jquery-form-styler/'))
+        .pipe(gulp.dest('build/js/jquery-form-styler/'));
 
 
 });
