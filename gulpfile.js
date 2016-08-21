@@ -62,7 +62,7 @@ gulp.task('clean', function (cb) {
 
 gulp.task('bower', function(){
   // jquery
-  gulp.src('./bower_components/jquery/jquery.min.js')
+  gulp.src('./bower_components/jquery/jquery.js')
       .pipe(gulp.dest(path.build.bower_js));
     // form-styler
     gulp.src('./bower_components/jquery-form-styler/*.css')

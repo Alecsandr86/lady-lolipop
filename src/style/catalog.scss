@@ -1,4 +1,12 @@
-@import "partials/path";
+@import "partials/rem";
+
+.product-box_it{
+  display: none;
+  transition: all, 0.5s, ease;
+  &.active{
+    display: block;
+  }
+}
 .catalog{
 
 }
@@ -484,8 +492,3 @@
 
 
 }
-
-
-
-
-

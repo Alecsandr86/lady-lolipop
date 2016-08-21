@@ -1,4 +1,4 @@
-$(document).ready( function(){
+$(document).ready(function(){
     // $("head").append("<link rel='stylesheet' type='text/css' href='css/style.css' />");
 
     $(".js-btn-cabinet").on('click', function(){
@@ -61,10 +61,9 @@ $(document).ready( function(){
         $(this).addClass("active");
     });
 
-
-
-
-
-
+    $(".sort-btn__item").bind("click", function () {
+        $(this).closest(".section").addClass('active').find(".product-box_it")
+        .removeClass("active").eq($(this).index()).addClass("active");
+    });
 
 });
