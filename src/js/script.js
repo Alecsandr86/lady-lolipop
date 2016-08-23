@@ -66,4 +66,23 @@ $(document).ready(function(){
         .removeClass("active").eq($(this).index()).addClass("active");
     });
 
+
+    // ez-plus
+    //initiate the plugin and pass the id of the div containing gallery images
+    $("#zoom").ezPlus({
+        gallery: 'gallery',
+        cursor: 'pointer',
+        galleryActiveClass: "active",
+        imageCrossfade: true,
+        scrollZoom: true
+        //loadingIcon: "http://www.elevateweb.co.uk/spinner.gif"
+    });
+
+    $("#zoom").bind("click", function (e) {
+        var ez = $('#zoom').data('ezPlus');
+        ez.closeAll(); //NEW: This function force hides the lens, tint and window
+        $.fancyboxPlus(ez.getGalleryList());
+        return false;
+    });
+
 });

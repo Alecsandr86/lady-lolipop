@@ -71,7 +71,9 @@ gulp.task('bower', function(){
     gulp.src('./bower_components/jquery-form-styler/*.js')
         .pipe(gulp.dest('src/js/jquery-form-styler/'))
         .pipe(gulp.dest('build/js/jquery-form-styler/'));
-
+  //EZ Plus
+    gulp.src('./bower_components/ez-plus/src/*.js')
+        .pipe(gulp.dest('src/js/ez-plus/'))
 
 });
 
