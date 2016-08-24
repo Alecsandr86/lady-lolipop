@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,26 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic" rel="stylesheet">
 
 
+    <style>
+        .loader-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 9999;
+        }
 
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -32px 0 0 -32px;
+            fill: #fb511e;
+        }
+    </style>
     <link rel="stylesheet" href="js\jquery-form-styler\jquery.formstyler.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/catalog.css">
@@ -26,313 +46,309 @@
     <![endif]-->
 
 </head>
+
 <body>
+    <div class="loader-box">
+        <img class="loader" src="images/loading-spinning-bubbles.svg" alt="loader">
+    </div>
+    <header>
+        <div class="menu-top">
+            <div class="container both">
+                <a class="top-menu-mob left js-menu" href="javascript: void(0);"></a>
+                <ul class="top-menu left js-menu__up">
+                    <li class="top-menu__item">
+                        <a class="top-menu__link" href="javascript: void(0);">Как сделать заказ</a>
+                    </li>
+                    <li class="top-menu__item">
+                        <a class="top-menu__link" href="javascript: void(0);">Скидки</a>
+                    </li>
+                    <li class="top-menu__item">
+                        <a class="top-menu__link" href="javascript: void(0);">Доставка и оплата</a>
+                    </li>
+                    <li class="top-menu__item">
+                        <a class="top-menu__link" href="javascript: void(0);">Возврат</a>
+                    </li>
+                    <li class="top-menu__item">
+                        <a class="top-menu__link" href="javascript: void(0);">Контакты</a>
+                    </li>
+                </ul>
+                <div class="cabinet-top right">
+                    <div class="btn-cabinet left  js-btn-cabinet">
+                        <a class="btn-cabinet__btn" href="javascript: void(0);">Личный кабинет<i class="btn-up"></i></a>
 
-<header>
-    <div class="menu-top">
-        <div class="container both">
-            <a class="top-menu-mob left js-menu" href="javascript: void(0);"></a>
-            <ul class="top-menu left js-menu__up">
-                <li class="top-menu__item">
-                  <a class="top-menu__link" href="javascript: void(0);">Как сделать заказ</a>
-                </li>
-                <li class="top-menu__item">
-                    <a class="top-menu__link" href="javascript: void(0);">Скидки</a>
-                </li>
-                <li class="top-menu__item">
-                    <a class="top-menu__link" href="javascript: void(0);">Доставка и оплата</a>
-                </li>
-                <li class="top-menu__item">
-                    <a class="top-menu__link" href="javascript: void(0);">Возврат</a>
-                </li>
-                <li class="top-menu__item">
-                    <a class="top-menu__link" href="javascript: void(0);">Контакты</a>
-                </li>
-            </ul>
-            <div class="cabinet-top right">
-                <div class="btn-cabinet left  js-btn-cabinet">
-                    <a class="btn-cabinet__btn" href="javascript: void(0);">Личный кабинет<i class="btn-up"></i></a>
-
-                    <ul class="btn-cabinet__list js-list-up">
-                        <li class="btn-cabinet__item">
-                            <a class="btn-cabinet__link" href="javascript: void(0);">Пункт 1</a>
-                        </li>
-                        <li class="btn-cabinet__item">
-                            <a class="btn-cabinet__link" href="javascript: void(0);">Пункт 2</a>
-                        </li>
-                        <li class="btn-cabinet__item">
-                            <a class="btn-cabinet__link" href="javascript: void(0);">Пункт 3</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="wr-your-cart right">
-                    <a class="your-cart" href="javascript: void(0);">
-                        <i class="your-cart-icon hidden-xs"></i>
-                        Ваша Корзина <span>(4)</span>
-                    </a>
-                    <div class="your-cart-down cart-down">
-                        <p class="cart-down__top">4 товара | 22 000 руб.</p>
-                        <div class="cart-list">
-                            <div class="cart-list__item both">
-                                <div class="cart-list__img left">
-                                    <a href="javascript: void(0);">
-                                        <img src="images/cart-list.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="cart-list__text left">
-                                    <a class="cart-list__link" href="javascript: void(0);">
+                        <ul class="btn-cabinet__list js-list-up">
+                            <li class="btn-cabinet__item">
+                                <a class="btn-cabinet__link" href="javascript: void(0);">Пункт 1</a>
+                            </li>
+                            <li class="btn-cabinet__item">
+                                <a class="btn-cabinet__link" href="javascript: void(0);">Пункт 2</a>
+                            </li>
+                            <li class="btn-cabinet__item">
+                                <a class="btn-cabinet__link" href="javascript: void(0);">Пункт 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wr-your-cart right">
+                        <a class="your-cart" href="javascript: void(0);">
+                            <i class="your-cart-icon hidden-xs"></i> Ваша Корзина <span>(4)</span>
+                        </a>
+                        <div class="your-cart-down cart-down">
+                            <p class="cart-down__top">4 товара | 22 000 руб.</p>
+                            <div class="cart-list">
+                                <div class="cart-list__item both">
+                                    <div class="cart-list__img left">
+                                        <a href="javascript: void(0);">
+                                            <img src="images/cart-list.jpg" alt="img">
+                                        </a>
+                                    </div>
+                                    <div class="cart-list__text left">
+                                        <a class="cart-list__link" href="javascript: void(0);">
                                         Платье "Таисия"
                                         (Черно-белый шнур)
                                     </a>
-                                    <p>
-                                        Артикул 34342
-                                        Производитель Лина
-                                        Размер 66
-                                    </p>
+                                        <p>
+                                            Артикул 34342 Производитель Лина Размер 66
+                                        </p>
+                                    </div>
+                                    <div class="cart-list__sum cart-list__sum-pat left">
+                                        <span class="sum-old">2 300 руб.</span>
+                                        <span>1 900 руб.</span>
+                                        <span class="sum-discount">Скидка 20%</span>
+                                    </div>
                                 </div>
-                                <div class="cart-list__sum cart-list__sum-pat left">
-                                    <span class="sum-old">2 300 руб.</span>
-                                    <span>1 900 руб.</span>
-                                    <span class="sum-discount">Скидка 20%</span>
-                                </div>
-                            </div>
 
-                            <div class="cart-list__item both">
-                                <div class="cart-list__img left">
-                                    <a href="javascript: void(0);">
-                                        <img src="images/cart-list.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="cart-list__text left">
-                                    <a class="cart-list__link" href="javascript: void(0);">
+                                <div class="cart-list__item both">
+                                    <div class="cart-list__img left">
+                                        <a href="javascript: void(0);">
+                                            <img src="images/cart-list.jpg" alt="img">
+                                        </a>
+                                    </div>
+                                    <div class="cart-list__text left">
+                                        <a class="cart-list__link" href="javascript: void(0);">
                                         Платье "Таисия"
                                         (Черно-белый шнур)
                                     </a>
-                                    <p>
-                                        Артикул 34342
-                                        Производитель Лина
-                                        Размер 66
-                                    </p>
+                                        <p>
+                                            Артикул 34342 Производитель Лина Размер 66
+                                        </p>
+                                    </div>
+                                    <div class="cart-list__sum left">
+                                        <span>1 900 руб.</span>
+                                    </div>
                                 </div>
-                                <div class="cart-list__sum left">
-                                    <span>1 900 руб.</span>
-                                </div>
-                            </div>
 
-                            <div class="cart-list__item both">
-                                <div class="cart-list__img left">
-                                    <a href="javascript: void(0);">
-                                        <img src="images/cart-list.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="cart-list__text left">
-                                    <a class="cart-list__link" href="javascript: void(0);">
+                                <div class="cart-list__item both">
+                                    <div class="cart-list__img left">
+                                        <a href="javascript: void(0);">
+                                            <img src="images/cart-list.jpg" alt="img">
+                                        </a>
+                                    </div>
+                                    <div class="cart-list__text left">
+                                        <a class="cart-list__link" href="javascript: void(0);">
                                         Платье "Таисия"
                                         (Черно-белый шнур)
                                     </a>
-                                    <p>
-                                        Артикул 34342
-                                        Производитель Лина
-                                        Размер 66
-                                    </p>
+                                        <p>
+                                            Артикул 34342 Производитель Лина Размер 66
+                                        </p>
+                                    </div>
+                                    <div class="cart-list__sum left">
+                                        <span>1 900 руб.</span>
+                                    </div>
                                 </div>
-                                <div class="cart-list__sum left">
-                                    <span>1 900 руб.</span>
-                                </div>
-                            </div>
 
-                            <div class="cart-list__item both">
-                                <div class="cart-list__img left">
-                                    <a href="javascript: void(0);">
-                                        <img src="images/cart-list.jpg" alt="img">
-                                    </a>
-                                </div>
-                                <div class="cart-list__text left">
-                                    <a class="cart-list__link" href="javascript: void(0);">
+                                <div class="cart-list__item both">
+                                    <div class="cart-list__img left">
+                                        <a href="javascript: void(0);">
+                                            <img src="images/cart-list.jpg" alt="img">
+                                        </a>
+                                    </div>
+                                    <div class="cart-list__text left">
+                                        <a class="cart-list__link" href="javascript: void(0);">
                                         Платье "Таисия"
                                         (Черно-белый шнур)
                                     </a>
-                                    <p>
-                                        Артикул 34342
-                                        Производитель Лина
-                                        Размер 66
-                                    </p>
+                                        <p>
+                                            Артикул 34342 Производитель Лина Размер 66
+                                        </p>
+                                    </div>
+                                    <div class="cart-list__sum left">
+                                        <span>1 900 руб.</span>
+                                    </div>
                                 </div>
-                                <div class="cart-list__sum left">
-                                    <span>1 900 руб.</span>
-                                </div>
+
                             </div>
 
+                            <a class="btn-checkout" href="javascript: void(0);">Оформить заказ</a>
+                            <p class="free-shipping">Ура! Бесплатная доставка!</p>
                         </div>
-
-                        <a class="btn-checkout" href="javascript: void(0);">Оформить заказ</a>
-                        <p class="free-shipping">Ура! Бесплатная доставка!</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="logo-phones">
-        <div class="container both">
+        <div class="logo-phones">
+            <div class="container both">
 
-            <div class="logo left">
-                <a class="logo__link" href="javascript: void(0);">
-                    <img src="images/logo.png" alt="logo">
-                </a>
+                <div class="logo left">
+                    <a class="logo__link" href="javascript: void(0);">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
 
-                <span class="logo__text">
+                    <span class="logo__text">
                     Женская одежда <br>
                     больших размеров
                 </span>
+                </div>
+
+                <ul class="phones right">
+                    <li class="phones__item hidden-md">
+                        <a class="phones__link phones__mas" href="javascript: void(0);">Письмо директору</a>
+                    </li>
+                    <li class="phones__item">
+                        8 (800) 500-41-20
+                        <br>
+                        <span class="phones__call">Звонок бесплатный</span>
+                    </li>
+                    <li class="phones__item">
+                        8 (495) 642-38-53
+                        <br>
+                        <span class="phones__call">пн-пт с 10:00 до 19:00</span>
+                    </li>
+                </ul>
             </div>
 
-            <ul class="phones right">
-                <li class="phones__item hidden-md">
-                    <a class="phones__link phones__mas" href="javascript: void(0);">Письмо директору</a>
-                </li>
-                <li class="phones__item">
-                    8 (800) 500-41-20 <br>
-                    <span class="phones__call">Звонок бесплатный</span>
-                </li>
-                <li class="phones__item">
-                    8 (495) 642-38-53 <br>
-                    <span class="phones__call">пн-пт с 10:00 до 19:00</span>
-                </li>
-            </ul>
         </div>
 
-    </div>
+        <div class="menu-wrapper">
+            <div class="container both">
+                <a class="menu_mobail left" href="javascript: void(0);"></a>
+                <ul class="menu left">
+                    <li class="menu__item">
+                        <a class="menu__link" href="javascript: void(0);">Женская одежда</a>
+                        <ul class="menu-up">
+                            <li class="menu-up__item container both">
 
-    <div class="menu-wrapper">
-        <div class="container both">
-            <a class="menu_mobail left" href="javascript: void(0);"></a>
-            <ul class="menu left">
-                <li class="menu__item">
-                    <a class="menu__link" href="javascript: void(0);">Женская одежда</a>
-                    <ul class="menu-up">
-                        <li class="menu-up__item container both">
+                                <ul class="menu-up__content menu-content left">
+                                    <li class="menu-content__item menu-content__item-title">
+                                        Каталог женской одежды
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Блузки</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Туники</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Брюки и бриджи</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Верхняя одежда</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Жакеты</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Водолазки и кардиганы</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Жилеты</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Юбки</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Костюмы</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Одежда для пляжа</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Платья</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Распродажа</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Топы и футболки</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Офисный стиль</a>
+                                    </li>
+                                </ul>
 
-                            <ul class="menu-up__content menu-content left">
-                                <li class="menu-content__item menu-content__item-title">
-                                    Каталог женской одежды
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Блузки</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Туники</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Брюки и бриджи</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Верхняя одежда</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Жакеты</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Водолазки и кардиганы</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Жилеты</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Юбки</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Костюмы</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Одежда для пляжа</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Платья</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Распродажа</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Топы и футболки</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Офисный стиль</a>
-                                </li>
-                            </ul>
+                                <ul class="menu-up__content menu-content left">
+                                    <li class="menu-content__item menu-content__item-title">
+                                        Производители
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Лина</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Лина</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Лавира</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Лавира</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Олси</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Олси</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Висель</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Висель</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Милада</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Милада</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Её стиль</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Её стиль</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Луна</a>
+                                    </li>
+                                    <li class="menu-content__item">
+                                        <a class="menu-content__link" href="javascript: void(0);">Луна</a>
+                                    </li>
+                                </ul>
 
-                            <ul class="menu-up__content menu-content left">
-                                <li class="menu-content__item menu-content__item-title">
-                                    Производители
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Лина</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Лина</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Лавира</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Лавира</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Олси</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Олси</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Висель</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Висель</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Милада</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Милада</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Её стиль</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Её стиль</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Луна</a>
-                                </li>
-                                <li class="menu-content__item">
-                                    <a class="menu-content__link" href="javascript: void(0);">Луна</a>
-                                </li>
-                            </ul>
-
-                            <img class="menu-up__img" src="images/img-menu.png" alt="img">
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="javascript: void(0);">Бижутерия</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="javascript: void(0);">Кожгалантерея</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="javascript: void(0);">Платки  и шарфы</a>
-                </li>
-            </ul>
-            <form class="form-site-search right">
-                <div class="site-search">
-                    <input class="site-search__input" type="search" placeholder="Поиск по сайту">
-                    <button class="site-search__btn"><i class="search-icon"></i></button>
-                </div>
-            </form>
+                                <img class="menu-up__img" src="images/img-menu.png" alt="img">
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="javascript: void(0);">Бижутерия</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="javascript: void(0);">Кожгалантерея</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="javascript: void(0);">Платки  и шарфы</a>
+                    </li>
+                </ul>
+                <form class="form-site-search right">
+                    <div class="site-search">
+                        <input class="site-search__input" type="search" placeholder="Поиск по сайту">
+                        <button class="site-search__btn"><i class="search-icon"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
 
-</header>
+    </header>
 <div class="catalog both">
 	<div class="container">
 		<aside class="aside hidden-md left">
@@ -1292,132 +1308,134 @@
 	</div>
 </div>
 
-  <footer class="footer">
+<footer class="footer">
     <div class="container both">
-      <div class="footer-logo left">
-        <a class="logo__link" href="javascript: void(0);">
-          <img src="images/logo-footer.png" alt="logo">
-        </a>
-        <span class="logo__text">
+        <div class="footer-logo left">
+            <a class="logo__link" href="javascript: void(0);">
+                <img src="images/logo-footer.png" alt="logo">
+            </a>
+            <span class="logo__text">
             Женская одежда <br>
             больших размеров
         </span>
-        <div class="link-forum">
-          <span class="forum-col">
+            <div class="link-forum">
+                <span class="forum-col">
             <i class="forum-icon"></i>
           </span>
-          <a href="javascript: void(0);" class="link-forum__link">Женский форум</a>
-          <br class="br-xs">
-          <span class="forum-col">
+                <a href="javascript: void(0);" class="link-forum__link">Женский форум</a>
+                <br class="br-xs">
+                <span class="forum-col">
             <i class="blog-icon"></i>
           </span>
-          <a href="javascript: void(0);" class="link-forum__link">Женский блог</a>
+                <a href="javascript: void(0);" class="link-forum__link">Женский блог</a>
+            </div>
+            <ul class="social-netw">
+                <li class="social-netw__item social-netw__item-name">
+                    Лалипоп в соц.сетях
+                </li>
+                <li class="social-netw__item">
+                    <a class="vk" href="javascript: void(0);"></a>
+                </li>
+                <li class="social-netw__item">
+                    <a class="fb" href="javascript: void(0);"></a>
+                </li>
+                <li class="social-netw__item">
+                    <a class="ok" href="javascript: void(0);"></a>
+                </li>
+                <li class="social-netw__item">
+                    <a class="vk" href="javascript: void(0);"></a>
+                </li>
+            </ul>
         </div>
-        <ul class="social-netw">
-          <li class="social-netw__item social-netw__item-name">
-            Лалипоп в соц.сетях
-          </li>
-          <li class="social-netw__item">
-            <a class="vk" href="javascript: void(0);"></a>
-          </li>
-          <li class="social-netw__item">
-            <a class="fb" href="javascript: void(0);"></a>
-          </li>
-          <li class="social-netw__item">
-            <a class="ok" href="javascript: void(0);"></a>
-          </li>
-          <li class="social-netw__item">
-            <a class="vk" href="javascript: void(0);"></a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-nav left">
+        <div class="footer-nav left">
 
-        <div class="footer-menu">
-          <p class="footer-title">О компании</p>
-          <ul class="footer-list">
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Вакансии</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Благотворительность</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Сертификаты</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Сотрудники</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Карта сайта</a>
-            </li>
-          </ul>
+            <div class="footer-menu">
+                <p class="footer-title">О компании</p>
+                <ul class="footer-list">
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Вакансии</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Благотворительность</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Сертификаты</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Сотрудники</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Карта сайта</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-menu">
+                <p class="footer-title">Сервис и поддержка</p>
+                <ul class="footer-list">
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Как сделать заказ</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Скидки</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Доставка и оплата</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Возврат</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-menu">
+                <p class="footer-title">Каталог товаров</p>
+                <ul class="footer-list">
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Женская одежда</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Бижутерия</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Кожгалантерея</a>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link">Платки и шарфы</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-menu">
+                <ul class="footer-list footer-list_tar">
+                    <li class="footer-list__item">
+                        <span class="footer-list__phones">8 (800) 500-41-20</span>
+                        <span class="footer-list__pho-title">Звонок бесплатный</span>
+                    </li>
+                    <li class="footer-list__item">
+                        <span class="footer-list__phones">8 (495) 642-38-53</span>
+                        <span class="footer-list__pho-title">пн-пт с 10:00 до 19:00</span>
+                    </li>
+                    <li class="footer-list__item">
+                        <a href="javascript: void(0);" class="footer-list__link footer-list__link_oran">Письмо директору</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-
-        <div class="footer-menu">
-          <p class="footer-title">Сервис и поддержка</p>
-          <ul class="footer-list">
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Как сделать заказ</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Скидки</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Доставка и оплата</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Возврат</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Контакты</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-menu">
-          <p class="footer-title">Каталог товаров</p>
-          <ul class="footer-list">
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Женская одежда</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Бижутерия</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Кожгалантерея</a>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link">Платки и шарфы</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-menu">
-          <ul class="footer-list footer-list_tar">
-            <li class="footer-list__item">
-              <span class="footer-list__phones">8 (800) 500-41-20</span>
-              <span class="footer-list__pho-title">Звонок бесплатный</span>
-            </li>
-            <li class="footer-list__item">
-              <span class="footer-list__phones">8 (495) 642-38-53</span>
-              <span class="footer-list__pho-title">пн-пт с 10:00 до 19:00</span>
-            </li>
-            <li class="footer-list__item">
-              <a href="javascript: void(0);" class="footer-list__link footer-list__link_oran">Письмо директору</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
     </div>
-  </footer>
+</footer>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery-form-styler/jquery.formstyler.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/ez-plus\jquery.ez-plus.js"></script>
-  <script src="js/script.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-form-styler/jquery.formstyler.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/ez-plus/jquery.ez-plus.js"></script>
+<script src="js/bxslider-4/jquery.bxslider.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
+
 </html>

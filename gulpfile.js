@@ -22,11 +22,11 @@ var path = {
         css: 'build/css/',
         img: 'build/images/',
         fonts: 'build/fonts/',
-        bower_js:'src/js/'
+        bower_js: 'src/js/'
     },
     src: {
         html: 'src/*.html',
-        js: './src/js/**/*.*',
+        js: 'src/js/**/*.*',
         style: 'src/style/*.scss',
         img: 'src/images/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -46,24 +46,25 @@ var config = {
     server: {
         baseDir: "./build"
     },
-     //tunnel: true,
-     host: 'localhost',
-     port: 9000,
+    //tunnel: true,
+    host: 'localhost',
+    port: 9000,
 };
 
-gulp.task('webserver', function () {
+gulp.task('webserver', function() {
     browserSync(config);
 });
 
-gulp.task('clean', function (cb) {
+gulp.task('clean', function(cb) {
     rimraf(path.clean, cb);
 });
 
 
-gulp.task('bower', function(){
-  // jquery
-  gulp.src('./bower_components/jquery/jquery.js')
-      .pipe(gulp.dest(path.build.bower_js));
+gulp.task('bower', function() {
+    // jquery
+    gulp.src('./bower_components/jquery/jquery.min.js')
+        .pipe(gulp.dest('src/js/'))
+        .pipe(gulp.dest('build/js/'));
     // form-styler
     gulp.src('./bower_components/jquery-form-styler/*.css')
         .pipe(gulp.dest('src/js/jquery-form-styler/'))
@@ -71,27 +72,38 @@ gulp.task('bower', function(){
     gulp.src('./bower_components/jquery-form-styler/*.js')
         .pipe(gulp.dest('src/js/jquery-form-styler/'))
         .pipe(gulp.dest('build/js/jquery-form-styler/'));
-  //EZ Plus
+    //EZ Plus
     gulp.src('./bower_components/ez-plus/src/*.js')
-        .pipe(gulp.dest('src/js/ez-plus/'))
+        .pipe(gulp.dest('src/js/ez-plus/'));
+    // bxslider-4
+    gulp.src('./bower_components/bxslider-4/dist/*.min.css')
+        .pipe(gulp.dest('src/js/bxslider-4/'))
+        .pipe(gulp.dest('build/js/bxslider-4/'));
+    gulp.src('./bower_components/bxslider-4/dist/*.min.js')
+        .pipe(gulp.dest('src/js/bxslider-4/'))
+        .pipe(gulp.dest('build/js/bxslider-4/'));
 
 });
 
 
-gulp.task('html:build', function () {
+gulp.task('html:build', function() {
     gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
-        .pipe(reload({stream: true}));
+        .pipe(reload({
+            stream: true
+        }));
 });
 
-gulp.task('js:build', function () {
+gulp.task('js:build', function() {
     gulp.src(path.src.js)
         .pipe(gulp.dest(path.build.js))
-        .pipe(reload({stream: true}));
+        .pipe(reload({
+            stream: true
+        }));
 });
 
-gulp.task('style:build', function () {
+gulp.task('style:build', function() {
     gulp.src('./src/style/*.css')
         .pipe(gulp.dest(path.build.css));
 
@@ -107,14 +119,18 @@ gulp.task('style:build', function () {
         //.pipe(cssmin())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
-        .pipe(reload({stream: true}));
+        .pipe(reload({
+            stream: true
+        }));
 });
 
 
 
-gulp.task('minify:css', function () {
+gulp.task('minify:css', function() {
     gulp.src('build/css/*.css')
-        .pipe(minify({keepBreaks: true}))
+        .pipe(minify({
+            keepBreaks: true
+        }))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
@@ -124,28 +140,32 @@ gulp.task('minify:css', function () {
 
 
 
-gulp.task('image:build', function () {
+gulp.task('image:build', function() {
     gulp.src(path.src.img)
         .pipe(imagemin({
             progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
+            svgoPlugins: [{
+                removeViewBox: false
+            }],
             use: [pngquant()],
             interlaced: true
         }))
         .pipe(gulp.dest(path.build.img));
-        //.pipe(reload({stream: true}));
+    //.pipe(reload({stream: true}));
 });
 
-gulp.task('sprite', function () {
+gulp.task('sprite', function() {
     var spriteData = gulp.src('./src/images/sprite/*.*').pipe(spritesmith({
         algorithm: "top-down",
         imgName: 'sprite.png',
         cssName: 'sprite.scss',
-        algorithmOpts: {sort: false},
+        algorithmOpts: {
+            sort: false
+        },
         padding: 5,
         imgPath: '../images/sprite.png',
         cssOpts: {
-            cssClass: function (item) {
+            cssClass: function(item) {
                 // If this is a hover sprite, name it as a hover one (e.g. 'home-hover' -> 'home:hover')
                 if (item.name.indexOf('-hover') !== -1) {
                     return '.sprite-' + item.name.replace('-hover', ':hover');
@@ -176,7 +196,7 @@ gulp.task('build', [
 ]);
 
 
-gulp.task('watch', function(){
+gulp.task('watch', function() {
     watch('src/**/*.html', function(event, cb) {
         gulp.start('html:build');
     });
@@ -185,7 +205,7 @@ gulp.task('watch', function(){
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('bower'),
-        gulp.start('js:build');
+            gulp.start('js:build');
     });
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
